@@ -2,6 +2,7 @@ package strings;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class NumberOfSubstringsWithOnly1s {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class NumberOfSubstringsWithOnly1s {
 
     public static int getSubStringCount(String str) {
 
-        List<String> stringList = Arrays.stream(str.split("0")).filter(e -> !(e.isBlank() || e.isEmpty())).toList();
+        List<String> stringList = Arrays.stream(str.split("0")).filter(e -> !(e.isBlank() || e.isEmpty())).collect(Collectors.toList());
         int finalSum = 0;
         System.out.println("stringList = " + stringList);
         int sum = 0;
