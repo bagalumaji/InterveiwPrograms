@@ -3,23 +3,30 @@ package arrays;
 public class SeparateEvenOddNumbers {
     public static void main(String[] args) {
         int[] arr = {2, 1, 4, 3, 5, 6};
-        int[] result = new int[arr.length];
-        int evenCount = 0;
-        for (int even : arr) {
-            if (even % 2 == 0) {
-                evenCount++;
+        separateEvenOddNumbersFromArray(arr);
+    }
+
+    static void separateEvenOddNumbersFromArray(int[] arr) {
+        int ep = 0;
+        int op = arr.length - 1;
+        while (ep < op) {
+            if (arr[ep] % 2 == 0) {
+                ep++;
             }
+            if (arr[op] % 2 == 1) {
+                op--;
+            }
+
+            if (arr[ep] % 2 == 1 && arr[op] % 2 == 0) {
+                int t = arr[op];
+                arr[op] = arr[ep];
+                arr[ep] = t;
+            }
+
         }
-        int e = 0;
         for (int j : arr) {
-            if (j % 2 == 0) {
-                result[e++] = j;
-            } else {
-                result[evenCount++] = j;
-            }
-        }
-        for (int val : result) {
-            System.out.println("val = " + val);
+
+            System.out.print(j + " ");
         }
     }
 }
