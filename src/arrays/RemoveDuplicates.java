@@ -2,7 +2,7 @@ package arrays;
 
 public class RemoveDuplicates {
     public static void main(String[] args) {
-        int nums[] = {1,1,2,2,3,4,4,5,5};
+        int[] nums = {1,1,2,2,3,4,4,5,5};
         int cnt = removeDuplicates(nums);
         for (int i = 0; i <cnt; i++) {
             System.out.print(nums[i] + " ");
